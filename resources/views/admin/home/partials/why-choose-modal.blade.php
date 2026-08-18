@@ -1,0 +1,20 @@
+<div class="modal fade" id="{{ $id }}" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <form id="{{ $formId }}" method="POST" action="{{ $action }}" enctype="multipart/form-data">
+                @csrf
+                @if ($editing) @method('PUT') @endif
+                <div class="modal-header"><h5 class="modal-title">{{ $title }}</h5><button class="btn-close" type="button" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body row g-3">
+                    <div class="col-md-8"><label class="form-label">Card Title</label><input class="form-control" name="title" required></div>
+                    <div class="col-md-4"><label class="form-label">Sort Order</label><input class="form-control" type="number" min="0" name="sort_order" value="0"></div>
+                    <div class="col-12"><label class="form-label">Description</label><textarea class="form-control" name="description" rows="4" required></textarea></div>
+                    <div class="col-md-6"><label class="form-label">Icon CSS Class</label><input class="form-control" name="icon_class" placeholder="icofont icofont-certificate"><small class="text-secondary">Used when no image is uploaded</small></div>
+                    <div class="col-md-6"><label class="form-label">Icon Image</label><input class="form-control" type="file" name="image" accept="image/*"><small class="text-secondary">Optional · Max 2MB</small></div>
+                    <div class="col-12"><div class="form-check form-switch"><input class="form-check-input" type="checkbox" name="is_active" value="1" checked><label class="form-check-label">Active</label></div></div>
+                </div>
+                <div class="modal-footer"><button class="btn btn-light border" type="button" data-bs-dismiss="modal">Cancel</button><button class="btn btn-admin-primary">Save</button></div>
+            </form>
+        </div>
+    </div>
+</div>

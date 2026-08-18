@@ -1,0 +1,3 @@
+<?php
+namespace App\Http\Controllers;use App\Models\AboutPage;use App\Models\AchievementStat;use App\Models\Certification;use App\Models\Faq;use App\Models\WhyChooseItem;use Illuminate\View\View;
+class AboutPageController extends Controller {public function __invoke():View{return view('pages.about',['settings'=>AboutPage::first(),'features'=>WhyChooseItem::where('is_active',true)->orderBy('sort_order')->get(),'stats'=>AchievementStat::where('is_active',true)->orderBy('sort_order')->get(),'certifications'=>Certification::where('is_active',true)->orderBy('sort_order')->get(),'faqs'=>Faq::where('is_active',true)->orderBy('sort_order')->get()]);}}

@@ -1,0 +1,3 @@
+<?php
+namespace App\Models;use Illuminate\Database\Eloquent\Model;use Illuminate\Database\Eloquent\Relations\BelongsTo;
+class TheoryCourse extends Model {protected $fillable=['course_type_id','city_id','branch_id','title','slug','fee','duration','discount','description','image','sort_order','is_active'];protected function casts():array{return['fee'=>'decimal:2','is_active'=>'boolean'];}public function type():BelongsTo{return $this->belongsTo(CourseType::class,'course_type_id');}public function city():BelongsTo{return $this->belongsTo(City::class);}public function branch():BelongsTo{return $this->belongsTo(Branch::class);}public function getRouteKeyName():string{return 'slug';}}

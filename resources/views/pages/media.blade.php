@@ -1,0 +1,9 @@
+@extends('layouts.app')
+@section('title', $settings?->media_page_title ?: 'Media')
+@section('content')
+<div class="breadcrumb-bar breadcrumb-bar-info pt-5"><div class="container py-5"><div class="breadcrumb-list text-center"><h2 class="breadcrumb-title">{{ $settings?->media_page_title ?: 'Media' }}</h2><nav><ol class="breadcrumb justify-content-center"><li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li><li class="breadcrumb-item active">{{ $settings?->media_page_title ?: 'Media' }}</li></ol></nav></div></div></div>
+<section class="home-three-trending py-5"><div class="container"><div class="home-three-head section-header-title" data-aos="fade-up"><h2>{{ $settings?->media_section_title ?: 'Media' }}</h2></div><div class="row g-4">
+@forelse($items as $item)<div class="col-lg-4 col-md-6"><article class="blog grid-blog h-100"><div class="blog-image"><a href="{{ $item->url }}" target="_blank" rel="noopener"><img class="img-fluid w-100" src="{{ $item->image_url }}" alt="{{ $item->title }}" loading="lazy" style="height:210px;object-fit:cover"></a></div><div class="blog-grid-box masonry-box"><div class="blog-info clearfix"><div class="post-left"><ul><li><img class="img-fluid" src="{{ asset('assets/img/icon/icon-22.svg') }}" alt="">{{ $item->published_at?->format('M d-Y') }}</li></ul></div></div><p class="blog-title"><a href="{{ $item->url }}" target="_blank" rel="noopener">{{ $item->title }}</a></p><div class="blog-content blog-read"><a href="{{ $item->url }}" target="_blank" rel="noopener" class="read-more btn btn-primary">{{ $settings?->media_button_text ?: 'Read More' }}</a></div></div></article></div>
+@empty<div class="col-12"><div class="bg-white rounded text-center py-5 text-muted">No media items available.</div></div>@endforelse
+</div><div class="mt-5 d-flex justify-content-center">{{ $items->links() }}</div></div></section>
+@endsection

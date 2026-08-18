@@ -1,0 +1,3 @@
+<?php
+use Illuminate\Database\Migrations\Migration;use Illuminate\Database\Schema\Blueprint;use Illuminate\Support\Facades\Schema;
+return new class extends Migration {public function up():void{Schema::table('site_settings',function(Blueprint $t){$t->string('skills_image')->nullable();$t->string('skills_title')->nullable();$t->text('skills_description')->nullable();$t->string('skills_button_text')->default('Browse Courses');});Schema::table('course_types',fn(Blueprint $t)=>$t->string('image')->nullable()->after('name'));}public function down():void{Schema::table('site_settings',fn(Blueprint $t)=>$t->dropColumn(['skills_image','skills_title','skills_description','skills_button_text']));Schema::table('course_types',fn(Blueprint $t)=>$t->dropColumn('image'));}};

@@ -1,0 +1,5 @@
+<?php
+namespace Database\Seeders;
+use App\Models\Faq;
+use Illuminate\Database\Seeder;
+class FaqSeeder extends Seeder {public function run():void{if(Faq::exists())return;$items=[['Why should you choose PATHWAY Driving Training School?','PATHWAY Driving Training School is a BRTA Registered Driving Training Centre. We always conduct training programs with the safety of the trainees in mind.'],['What makes PATHWAY Driving Training School different?','PATHWAY provides training under qualified trainers and a structured curriculum, with special arrangements for women.'],['Why Pathway Driving Training School is the best in Dhaka?','Pathway ensures trainee safety with international-quality driving training at an affordable cost in Dhaka.'],['Is there a certificate at the end of the driving training?','Yes. Students receive an online-verifiable certificate after successful completion of the driving course.']];foreach($items as $i=>[$q,$a])Faq::create(['question'=>$q,'answer'=>$a,'sort_order'=>$i]);}}

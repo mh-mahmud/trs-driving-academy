@@ -1,0 +1,5 @@
+<?php
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+return new class extends Migration {public function up():void{Schema::table('site_settings',function(Blueprint $t){$t->string('hero_background')->nullable();$t->string('hero_subtitle')->nullable();$t->string('hero_title')->nullable();$t->text('hero_description')->nullable();$t->string('hero_primary_text')->nullable();$t->string('hero_primary_url')->nullable();$t->string('hero_secondary_text')->nullable();$t->string('hero_secondary_url')->nullable();$t->string('hero_success_title')->nullable();$t->string('hero_success_text')->nullable();$t->json('hero_badges')->nullable();$t->json('hero_stats')->nullable();});}public function down():void{Schema::table('site_settings',fn(Blueprint $t)=>$t->dropColumn(['hero_background','hero_subtitle','hero_title','hero_description','hero_primary_text','hero_primary_url','hero_secondary_text','hero_secondary_url','hero_success_title','hero_success_text','hero_badges','hero_stats']));}};

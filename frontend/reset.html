@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Loding font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,700" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" type="text/css" href="https://www.pdts.com.bd/assets/frontend/css/login_styles.css">
+
+    <title>Reset Password</title>
+</head>
+
+<body>
+
+    <!-- Backgrounds -->
+
+    <div id="login-bg" class="container-fluid">
+
+        <div class="bg-img"></div>
+        
+    </div>
+
+    <!-- End Backgrounds -->
+
+    <div class="container" id="login">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="login">
+                    <div class="logo">
+                        <img src="https://www.pdts.com.bd/uploads/logos/logo-dark.png" alt="logo">
+                    </div>
+                    <h1 class="reset_heading">Reset Password</h1>
+
+                    
+                    <!-- Reset Password form -->
+                    <form method="POST" action="https://www.pdts.com.bd/password/email">
+                        <input type="hidden" name="_token" value="vINR1dMBEJUSOQeaXhQEmtGxXoqt8AbaH9bScAwe">                        <div class="form-group">
+                            <input id="email" type="email" class="form-control " name="email" value="" required autocomplete="email" placeholder="Enter Email Address" autofocus>
+
+                                                    </div>
+
+                        <br>
+                        <button type="submit" class="btn btn-lg btn-block btn-success">Send Password Reset Link</button>
+                    </form>
+                    <!-- Reset Password form -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+
